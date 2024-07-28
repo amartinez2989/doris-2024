@@ -1,0 +1,68 @@
+version: '3.5'
+
+services:
+  laravel-doris-web:
+    container_name: doris-web
+    build:
+      context: ./docker/nginx
+      args:
+        UID: $U_ID
+    ports:
+      - 252:80
+    volumes:
+      - ./:/appdata/www
+    depends_on:
+      - laravel-doris-be
+    networks:
+      - laravel-cms-network
+
+  laravel-doris-be:
+    container_name: doris-be
+    build:
+      context: docker/php
+      args:
+        UID: $U_ID
+    environment:
+      XDEBUG_CLIENT_HOST: doris-be
+      XDEBUG_CLIENT_PORT: 9000
+      PHP_IDE_CONFIG: serverName=docker-dev-env-for-doris
+    volumes:
+      - ./:/appdata/www
+    depends_on:
+      - laravel-doris-db
+    networks:
+      - laravel-cms-network
+
+  laravel-doris-db:
+    container_name: doris-db
+    build:
+      context: ./docker/database
+    ports:
+      - 35000:3306
+    environment:
+      MYSQL_DATABASE: laravel_doris
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+    command: mysqld --sql_mode="STRICT_ALL_TABLES,NO_ENGINE_SUBSTITUTION"
+    volumes:
+      - laravel-db-data:/var/lib/mysql
+    networks:
+      - laravel-cms-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=laravel-doris-db
+    depends_on:
+      - laravel-doris-db
+    networks:
+      - laravel-cms-network
+volumes:
+  laravel-db-data:
+
+networks:
+  laravel-cms-network:
+    external: true
