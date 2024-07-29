@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'DashboardController@getHome')->name('dashboard');
+
+Route::prefix('connect')->group(function(){
+    Route::get('/login','ConnectController@getLogin')->name('login');
 });
