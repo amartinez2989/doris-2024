@@ -1,0 +1,143 @@
+:root{
+    --c1: #4fae5a
+    --c2: #6f6b7d
+    --c3: #5d596c
+    --c4: #48c256
+}
+
+*
+    margin 0px
+    padding 0px
+    -webkit-touch-callout: none !important
+    -webkit-user-drag: none
+    transition all 0.2s ease 
+    &::-webkit-scrollbar
+        display none
+.ts
+    -webkit-transition: all 0.3s ease
+    transition: all 0.3s ease
+.mtop4
+    margin-top: 4px !important
+.mtop8
+    margin-top: 8px !important
+.mtop16
+    margin-top: 16px !important
+.mtop24
+    margin-top: 24px !important  
+.mtop32
+    margin-top: 32px !important
+
+.form-control
+.form-select
+    &:focus
+        box-shadow: none
+        outline: none
+.form-select
+    &:focus
+        border: 1px solid var(--c1)
+.form
+    label
+        color var(--c4)
+        display: flex
+        font-size: 0.88rem
+        margin-bottom: 6px
+        width: 100%
+    input
+        box-sizing: border-box
+        border 1px solid #dbdade
+        border-radius: .375rem
+        color var(--c2)
+        display: flex
+        font-size: 0.9375rem
+        padding: 9px 12px
+        width 100%
+        &:focus
+        &:active
+            outline: none
+        &:focus
+            border 1px solid var(--c1)
+    input[type=submit]
+        display: grid
+        box-sizing: border-box
+        background-color: var(--c1)
+        border 1px solid var(--c1)
+        color #fff
+        font-size: 0.9375rem
+        letter-spacing: .43px
+        padding: 9px 12 ppx 
+        transition: all .135s ease-in-out
+        cursor: pointer
+        width 100%
+        &:hover
+            border 1px solid #222
+            background-color: #222
+    .actions_rigth
+        display: flex
+        justify-content: right
+        a
+          font-weight: 400
+
+.form-check
+    form-check-input
+        &:checked
+            background-color: var(--c1)
+            border-color var(--c1)
+        &:focus
+            box-shadow: none
+            outline: none
+
+.loader_action
+    align-items center
+    display none
+    background-color rgba(0,0,0, .5)
+    justify-content center
+    height 100vh
+    position fixed
+    width: 100%
+    z-index 999
+    .action
+        align-items center
+        display flex
+        background-color #fff
+        border-radius 8px
+        box-sizing: border-box
+        justify-content center
+        padding 16px
+        overflow: hidden
+        width: 330px
+        .col
+            display block
+            flex initial
+            color: #333
+            float left
+            &:first-child
+                width: 40px
+                img
+                    display block
+                    width 100%
+            &:last-child
+                margin-left: 5%
+                position: relative
+                width: calc(95% - 40px)
+
+.loader_action_animation_show
+    animation-timing-function ease-in-out;
+    animation action_show 0.3s forwards;
+
+.loader_action_animation_hide
+    animation-timing-function ease-in-out;
+    animation action_hide 0.3s forwards;
+.align_center
+    display: flex
+    justify-content: center
+.hide
+    display: none !important
+
+@keyframes action_show{
+    0% { opacity: 0}
+    100% { opacity: 1}
+}
+@keyframes action_hide{
+    0% { opacity: 1}
+    100% { opacity: 0}
+}

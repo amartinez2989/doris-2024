@@ -13,13 +13,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link href="stylesheet" href="{{ url('/static/css/core.css?v='.time())}}">
-    <link href="stylesheet" href="{{ url('/static/css/single_page.css?v='.time())}}">
+    <link rel="stylesheet" href="{{ url('/static/css/core.css?v='.time()) }}">
+    <link rel="stylesheet" href="{{ url('/static/css/single_page.css?v='.time()) }}">
 </head>
 <body>
     <div class="wrapper">
         @section('content')
-            
         @show
     </div>
 

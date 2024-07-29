@@ -1,0 +1,81 @@
+body
+    background-color: #fff
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px
+    margin 0px
+    padding 0px
+
+.connect
+    display: flex
+    height: 100vh
+    width 100%
+    .col
+        box-sizing: border-box
+        display: flex
+        height: 100vh
+        width 100%
+        &:first-child
+            padding: 32px 0px 32px 32px
+            width 56%
+        &:last-child
+            width 44%
+    .cover
+        align-items: center
+        background-color: #f9f7fa
+        box-sizing: border-box
+        border-radius: 1.125rem
+        display: flex
+        width 100%
+        img
+            display: block
+            height: auto
+            width 60%
+            --a: 4deg
+            transform: perspective(200px) rotate3d(var(--r,1,-1),0,calc(var(--i,1)*var(--a)));
+            transition: .4s
+        &:hover
+            --i: -1;
+            -webkit-mask-position 0 0;
+    .box
+        align-items: center
+        display: flex
+        justify-content: center
+        box-sizing: border-box
+        padding: 3rem
+        width 100%
+        .in
+            width 100%
+            max-width: 400px
+            .logo
+                width 100%
+                img
+                    display: block
+                    width 150px
+            h3
+                color var(--c3)
+                font-weight: 500px
+                font-size: 1.625rem
+                margin: 0px
+                margin-top: 4px
+            p
+                color: #6f6b7d
+                font-size: 1.1em
+                margin: 0px
+                margin-top: 4px
+            a
+                color var(--c1)
+                text-decoration: none
+
+@media screen and (max-width 992px)
+    .connect
+        .col
+            &:first-child
+                display: none
+            &:last-child
+                width 100%
+        .box
+            .in
+                h3
+                    font-size: 1.255rem
+                p
+                    font-size: 0.8em
