@@ -14,7 +14,7 @@
             <label for="email">Correo electrónico:</label>
             {!! Form::text('email', null, ['class' => 'disableac'])!!}
             <label for="password" class="mtop8">Contraseña:</label>
-            {!! Form::password('password',null, ['class' => 'disableac'])!!}
+            {!! Form::password('password',['class' => 'disableac'])!!}
                 
             {!! Form::submit('Ingresar', ['class' => 'mtop16']) !!}
             {!! Form::close() !!}

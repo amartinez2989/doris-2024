@@ -1,5 +1,8 @@
 @extends('master_single_page')
 
+@section('custom_js')
+    <script src="{{ url('/static/js/connect.js?='.time())}}"> </script>
+@endsection
 @section('content')
     <div class="connect">
         <div class="col">
