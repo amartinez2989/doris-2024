@@ -18,3 +18,8 @@ Route::get('/', 'DashboardController@getHome')->name('dashboard');
 Route::prefix('connect')->group(function(){
     Route::get('/login','ConnectController@getLogin')->name('login');
 });
+
+Route::prefix('/api-js')->group(function (){
+    // Connect Module
+    Route::post('/connect/login', 'ApiJS\ConnectController@postLogin');
+});
