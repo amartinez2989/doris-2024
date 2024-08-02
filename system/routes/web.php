@@ -17,6 +17,8 @@ Route::get('/', 'DashboardController@getHome')->name('dashboard');
 
 Route::prefix('connect')->group(function(){
     Route::get('/login','ConnectController@getLogin')->name('login');
+    Route::get('/logout','ConnectController@getLogout')->name('logout');
+    Route::get('/two/factor','ConnectController@getTwoFactor')->name('two_factor');
 });
 
 Route::prefix('/api-js')->group(function (){
