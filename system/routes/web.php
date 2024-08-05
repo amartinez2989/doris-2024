@@ -24,4 +24,5 @@ Route::prefix('connect')->group(function(){
 Route::prefix('/api-js')->group(function (){
     // Connect Module
     Route::post('/connect/login', 'ApiJS\ConnectController@postLogin');
+    Route::post('/connect/twofactor', 'ApiJS\ConnectController@postTwoFactor');
 });

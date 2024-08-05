@@ -13,6 +13,7 @@ class DashboardController extends Controller
     }
 
     public function getHome(){
-        return "Hola mundo";
+        $data = [];
+        return view('dashboard',$data);
     }
 }

@@ -1,0 +1,37 @@
+body
+    background-color: #f8f7fa
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14px
+    margin 0px
+    padding 0px
+.wrapper
+    display: flex
+    height: 100vh
+    max-height: 100vh
+    width 100%
+    .sidebar
+        background-color: #fff
+        box-shadow: 0 0.125rem 0.25rem rgba(165,163,174, .3)    
+        height: 100%
+        max-height: 100%
+        transition  all 0.3 ease
+        width 260px
+        z-index 999
+        .logo
+            padding: 16px 12px
+            position: relative
+            img
+                display: block
+                width 60%
+            a
+                color var(--c2)
+                font-size: 1.1em
+                position absolute
+                top: 20px
+                right: 18px
+
+.hide-in-desktop
+    display: none
+@media screen and (max-width: 992px)
+    .hide-in-desktop
+        display: block
