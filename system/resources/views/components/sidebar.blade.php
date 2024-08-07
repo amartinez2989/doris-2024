@@ -10,6 +10,15 @@
                 <i class="bi bi-house"></i>
                 <span>Dashboard</span>
             </a>
+        </li>    
+        @endif
+        @if(getPermissions(Auth::User()->permissions,'users_list'))
+        <li>
+            <a href="{{ url('/users/all') }}" class="lk-users_list lk-users_view lk-users_edit lk-users-permissions lk-users_add sidebar_accordion" data-target="accordion_users">  
+                <i class="bi bi-people"></i>
+                <span>Usuarios</span>
+                <span class="row-icon"><i class="bi bi-chevron-rigth"></i></span>
+            </a>
             <ul id="accordion_users" class="accordion_ul">
                 <li>
                     <a href="{{ url('/users/list/all') }}" id="side_lk_users_all"><i class="bi bi-record"></i>
@@ -22,15 +31,6 @@
                 </li>                   
                 @endforeach
             </ul>
-        </li>    
-        @endif
-        @if(getPermissions(Auth::User()->permissions,'user_list'))
-        <li>
-            <a href="{{ url('/users/all') }}" class="lk-user_list lk-user_view lk-user_edit lk-users-permissions lk-user_add sidebar_accordion" data-target="accordion_users">  
-                <i class="bi bi-people"></i>
-                <span>Usuarios</span>
-                <span class="row-icon"<i class="bi bi-chevron-rigth"></i>></span>
-            </a>       
         </li>    
         @endif
         @if(getPermissions(Auth::User()->permissions,'platform_settings'))
