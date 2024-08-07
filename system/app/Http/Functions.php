@@ -18,3 +18,14 @@ function getPermissions($json, $key){
         endif;
     endif;
 }
+
+function user_role($id = null){
+    $a = [
+        '1' => 'Administrador', '2' => 'Colaborador', '3' => 'Driver', '4' => 'Comercio'
+    ];
+    if (!is_null($id)):
+        return $a[$id];
+    else:
+        return $a;
+    endif;
+}
