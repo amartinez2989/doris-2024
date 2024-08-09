@@ -4,6 +4,8 @@ body
     font-size: 14px
     margin 0px
     padding 0px
+.rotated-0
+    transform: rotate(0deg)
 .wrapper
     display: flex
     height: 100vh
@@ -77,8 +79,53 @@ body
                                 font-size: 0.7em
                                 position: relative
                                 top -2px
+    .content
+        box-sizing: border-box
+        height: 100vh
+        max-height: 100vh
+        overflow-y: scroll
+        padding: 24px
+        width calc(100% - 260px)
+        .topbar
+            display: flex
+            background-color: #fff
+            border-radius: 6px
+            justify-content: space-between
+            padding: 14px 16px
+            width 100%
+            z-index: 999
+            .ul
+                display: flex
+                list-style none
+                margin: 0px
+                padding: 0px
+                li
+                    a
+                        cursor pointer
+                        display: flex
+                        width 100%
+                        i
+                            display: block
+                            color var (--c2)
+                            font-size: 1.4em !important
+                            max-height: 26px
+                            width 26px
+                        &:hover
+                            color var (--c1)
+                            i
+                            span
+                                color var (--c1)
 .hide-in-desktop
     display: none
 @media screen and (max-width: 992px)
+    .wrapper
+        .sidebar
+            left: -270px
+            position absolute
+            top 0
+        .content
+            box-sizing: border-box
+            padding: 14px
+            width 100%
     .hide-in-desktop
         display: block

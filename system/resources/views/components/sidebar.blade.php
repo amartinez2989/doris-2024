@@ -17,7 +17,7 @@
             <a href="{{ url('/users/all') }}" class="lk-users_list lk-users_view lk-users_edit lk-users-permissions lk-users_add sidebar_accordion" data-target="accordion_users">  
                 <i class="bi bi-people"></i>
                 <span>Usuarios</span>
-                <span class="row-icon"><i class="bi bi-chevron-rigth"></i></span>
+                <span class="row-icon" id="row_icon_accordion_users"><i class="bi bi-chevron-right"></i></span>
             </a>
             <ul id="accordion_users" class="accordion_ul">
                 <li>

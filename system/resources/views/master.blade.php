@@ -33,6 +33,7 @@
     <div class="wrapper">
         @include('components.sidebar')
         <div class="content">
+            @include('components.content_topbar')
             @section('content')
             @show
         </div>
